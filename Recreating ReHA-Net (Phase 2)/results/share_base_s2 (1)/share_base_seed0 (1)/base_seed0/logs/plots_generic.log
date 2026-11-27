@@ -1,0 +1,68 @@
+
+===== START 2026-11-25 23:36:32 =====
+$ /usr/bin/python3 /content/drive/MyDrive/reha_baseline_v2/code/plot_results.py /content/drive/MyDrive/reha_baseline_v2/results/base_seed0/1 --snr-convention repo
+
+wrote 27 plots to /content/drive/MyDrive/reha_baseline_v2/results/base_seed0/1/plots
+   01_loss_vs_epochs.png
+   08_loss_first20_epochs.png
+   cc_vs_epochs.png
+   rrmse_vs_epochs.png
+   20_convergence_thresholds.png
+   21_psnr_snr_vs_epochs.png
+   22_rrmse_variants_vs_epochs.png
+   23_gradient_norm_and_lr.png
+   24_generalisation_gap.png
+   02_waveform_comparison.png
+   03_psd.png
+   04_metrics_vs_snr.png
+   05_boxplots.png
+   06_predicted_vs_true.png
+   07_residuals.png
+   09_spectral_difference.png
+   10_metrics_vs_paper.png
+   11_model_comparison_bars.png
+   12_error_cdf.png
+   13_pass_rate_curves.png
+   14_error_vs_amplitude.png
+   15_best_worst_segments.png
+   16_snr_segment_heatmap.png
+   17_per_band_cc.png
+   18_classical_baseline.png
+   19_data_overview.png
+   27_psnr_snr_vs_input_snr.png
+
+===== END 2026-11-25 23:36:48  exit=0 =====
+
+===== START 2026-11-26 02:45:55 =====
+$ /usr/bin/python3 /content/drive/MyDrive/reha_baseline_v2/code/plot_results.py /content/drive/MyDrive/reha_baseline_v2/results/base_seed0/1 --snr-convention repo
+
+wrote 27 plots to /content/drive/MyDrive/reha_baseline_v2/results/base_seed0/1/plots
+   01_loss_vs_epochs.png
+   08_loss_first20_epochs.png
+   cc_vs_epochs.png
+   rrmse_vs_epochs.png
+   20_convergence_thresholds.png
+   21_psnr_snr_vs_epochs.png
+   22_rrmse_variants_vs_epochs.png
+   23_gradient_norm_and_lr.png
+   24_generalisation_gap.png
+   02_waveform_comparison.png
+   03_psd.png
+   04_metrics_vs_snr.png
+   05_boxplots.png
+   06_predicted_vs_true.png
+   07_residuals.png
+   09_spectral_difference.png
+   10_metrics_vs_paper.png
+   11_model_comparison_bars.png
+   12_error_cdf.png
+   13_pass_rate_curves.png
+   14_error_vs_amplitude.png
+   15_best_worst_segments.png
+   16_snr_segment_heatmap.png
+   17_per_band_cc.png
+   18_classical_baseline.png
+   19_data_overview.png
+   27_psnr_snr_vs_input_snr.png
+
+===== END 2026-11-26 02:46:23  exit=0 =====
