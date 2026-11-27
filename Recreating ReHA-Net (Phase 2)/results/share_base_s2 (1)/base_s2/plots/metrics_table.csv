@@ -1,0 +1,3 @@
+signal,mse,cc,rrmse_temporal,rrmse_spectral,psnr,snr,rrmse_t,rrmse_f,rrmse_s,rrmse_total
+Noisy input,0.25383,0.82746,0.77002,2.72179,24.90691,14.99992,0.77055,0.66596,0.39630,0.61094
+Denoised (model),0.03881,0.93342,0.26900,0.35868,27.48024,17.57329,0.26919,0.19629,0.25339,0.23963

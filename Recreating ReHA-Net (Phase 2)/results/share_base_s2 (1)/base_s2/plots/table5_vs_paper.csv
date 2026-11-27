@@ -1,0 +1,8 @@
+metric,ours,paper_ReHA-Net_EOG
+psnr,27.4802,27.1
+snr,17.5733,17.06
+cc,0.9334,0.976
+rrmse_total,0.2396,0.1653
+rrmse_s,0.2534,0.1714
+rrmse_t,0.2692,0.1785
+rrmse_f,0.1963,0.1461
