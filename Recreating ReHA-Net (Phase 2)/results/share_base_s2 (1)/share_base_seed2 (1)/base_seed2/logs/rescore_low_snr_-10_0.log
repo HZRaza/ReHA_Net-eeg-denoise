@@ -1,0 +1,30 @@
+
+===== START 2026-11-26 01:02:59 =====
+$ /usr/bin/python3 /content/drive/MyDrive/reha_baseline_v2/code/eval_reha.py /content/drive/MyDrive/reha_baseline_v2/results/base_seed2/1 --data-dir /content/drive/MyDrive/reha_baseline_v2/data/ --snr-low -10 --snr-high 0
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+W0000 00:00:1795654984.702792   66327 gpu_bfc_allocator.cc:47] Overriding orig_value setting because the TF_FORCE_GPU_ALLOW_GROWTH environment variable is set. Original config value was false.
+loaded 2,171,921 parameters; evaluating with convention 'repo', nominal -10..0 dB
+Test segments: 2706
+  Zhang et al. metrics (EEGdenoiseNet)
+    CC              : 0.6821 +- 0.2422   (noisy input 0.3538)
+    RRMSE temporal  : 1.0716   (noisy input 4.2312)
+    RRMSE spectral  : 3.6678   (PSD based)
+    MSE             : 0.08046
+  ReHA-Net paper metrics (compare with its Tables 4/5)
+    PSNR / SNR (dB) : 11.47 / 1.47
+    RRMSE total     : 0.8838   (= mean of t, f, s)
+    RRMSE t / f / s : 1.0725 / 0.8423 / 0.7365
+
+   nominal   actual   CC     RRMSEt(Zhang)  RRMSEtotal  PSNR   SNR
+    -10.0dB   -20.0dB  0.395  2.268          1.770      3.7  -6.3
+     -8.0dB   -16.0dB  0.528  1.473          1.196      7.4  -2.6
+     -6.0dB   -12.0dB  0.656  0.994          0.839      10.8  0.8
+     -4.0dB    -8.0dB  0.765  0.713          0.622      13.5  3.5
+     -2.0dB    -4.0dB  0.846  0.546          0.486      15.7  5.7
+      0.0dB     0.0dB  0.902  0.435          0.389      17.6  7.6
+  ('actual' = standard 20*log10 definition; the repo's eq.2 convention gives 2x the nominal dB)
+  EOG only: CC 0.7935  RRMSE-t 0.8236  PSNR 13.46  SNR 3.56  RRMSE total 0.7133
+  EMG only: CC 0.5701  RRMSE-t 1.3225  PSNR 9.46  SNR -0.63  RRMSE total 1.0550
+saved /content/drive/MyDrive/reha_baseline_v2/results/base_seed2/1/nn_output/eval_repo_-10_0.json
+
+===== END 2026-11-26 01:03:16  exit=0 =====

@@ -1,0 +1,15 @@
+
+===== START 2026-11-26 01:03:49 =====
+$ /usr/bin/python3 /content/drive/MyDrive/reha_baseline_v2/code/plots_phase2.py /content/drive/MyDrive/reha_baseline_v2/results/base_seed2/1
+
+wrote 8 plots to /content/drive/MyDrive/reha_baseline_v2/results/base_seed2/1/plots_phase2
+   30_metrics_by_noise_vs_snr.png
+   31_snr_gain_vs_input_snr.png
+   32_band_power_bias.png
+   33_band_bias_vs_input_snr.png
+   34_spectral_difference_by_noise.png
+   35_ours_vs_paper_EOG_EMG.png
+   36_pass_rate_by_noise.png
+   37_overfitting_and_lr.png
+
+===== END 2026-11-26 01:03:55  exit=0 =====
