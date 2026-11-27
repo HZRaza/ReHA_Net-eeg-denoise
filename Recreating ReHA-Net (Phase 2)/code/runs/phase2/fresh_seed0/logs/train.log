@@ -1,0 +1,46 @@
+
+===== START 2026-11-26 08:11:27 =====
+$ /usr/bin/python3 /content/drive/MyDrive/reha_baseline_v2/code/main_reha.py --foldername fresh_seed0 --data-dir /content/drive/MyDrive/reha_baseline_v2/data/ --result-dir /content/drive/MyDrive/reha_baseline_v2/results --seed 0 --noise-type MIXED --combin-num 10 --snr-convention repo --snr-low -5.0 --snr-high 20.0 --n-levels 6 --epochs 27 --patience 8 --batch-size 32 --lr 5e-05 --weight-decay 0.0001 --clipnorm 1.0 --lr-schedule cosine --optimizer adamw --lambda-cc 0.05 --lambda-psd 0.05 --lambda-band 0.0 --network reha --arch v2 --base 36 --dropout 0.1 --msc-dilation 1,1,1 --att-reduction 8 --revin norm --fresh-noise
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1795680687.849776    5582 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+I0000 00:00:1795680687.924765    5582 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1795680691.078314    5582 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+E0000 00:00:1795680695.837859    5582 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+ReHA_Net parameters: 2,171,921
+EEG segments train/val/test: 3611 / 452 / 451  (seed 0)
+  EOG pool: 2720 / 340 / 340
+  EMG pool: 4478 / 560 / 560
+noise_type MIXED | SNR convention 'repo': nominal -5.0..20.0 dB -> real -10.0..40.0 dB, test levels [-5.0, 0.0, 5.0, 10.0, 15.0, 20.0]
+train (36110, 512) | val (2712, 512) | test (2706, 512)
+Resuming from epoch 28/27
+Loaded best weights from epoch 21 (val_mse 0.03519)
+
+======================================================================
+fresh_seed0 | best epoch 21 of 27 run | 2,171,921 parameters
+Test segments: 2706
+  Zhang et al. metrics (EEGdenoiseNet)
+    CC              : 0.9373 +- 0.1122   (noisy input 0.8257)
+    RRMSE temporal  : 0.2579   (noisy input 0.7700)
+    RRMSE spectral  : 0.3176   (PSD based)
+    MSE             : 0.03690
+  ReHA-Net paper metrics (compare with its Tables 4/5)
+    PSNR / SNR (dB) : 27.32 / 17.26
+    RRMSE total     : 0.2309   (= mean of t, f, s)
+    RRMSE t / f / s : 0.2581 / 0.1872 / 0.2473
+
+   nominal   actual   CC     RRMSEt(Zhang)  RRMSEtotal  PSNR   SNR
+     -5.0dB   -10.0dB  0.751  0.713          0.633      13.5  3.5
+      0.0dB     0.0dB  0.909  0.413          0.373      18.1  8.1
+      5.0dB    10.0dB  0.973  0.231          0.206      23.0  12.9
+     10.0dB    20.0dB  0.995  0.099          0.089      30.5  20.4
+     15.0dB    30.0dB  0.998  0.051          0.047      37.5  27.4
+     20.0dB    40.0dB  0.998  0.040          0.037      41.3  31.2
+  ('actual' = standard 20*log10 definition; the repo's eq.2 convention gives 2x the nominal dB)
+  EOG only: CC 0.9613  RRMSE-t 0.2289  PSNR 27.59  SNR 17.58  RRMSE total 0.2061
+  EMG only: CC 0.9132  RRMSE-t 0.2874  PSNR 27.06  SNR 16.94  RRMSE total 0.2558
+======================================================================
+outputs in /content/drive/MyDrive/reha_baseline_v2/results/fresh_seed0/1/nn_output
+
+===== END 2026-11-26 08:13:28  exit=0 =====
